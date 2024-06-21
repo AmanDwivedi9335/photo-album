@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
 const AlbumForm = ({ onSave, album }) => {
   const [title, setTitle] = useState('');
@@ -16,16 +17,20 @@ const AlbumForm = ({ onSave, album }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Album Title"
-        required
-      />
-      <button type="submit">{album ? 'Update' : 'Add'} Album</button>
-    </form>
+    <Form onSubmit={handleSubmit} className="mb-4">
+      <Form.Group controlId="albumTitle">
+        <Form.Control
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Album Title"
+          required
+        />
+      </Form.Group>
+      <Button variant="success" type="submit">
+        {album ? 'Update' : 'Add'} Album
+      </Button>
+    </Form>
   );
 };
 

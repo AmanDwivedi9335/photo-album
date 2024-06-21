@@ -1,9 +1,11 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 form {
@@ -12,26 +14,16 @@ form {
   margin-bottom: 20px;
 }
 
-input {
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #218838;
+.container {
+  padding-top: 50px;
 }
 
-div {
-  text-align: center;
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,12 +1,19 @@
 import React from 'react';
+import { ListGroup, Button } from 'react-bootstrap';
 
 const AlbumItem = ({ album, onEdit, onDelete }) => {
   return (
-    <div>
-      <h3>{album.title}</h3>
-      <button onClick={() => onEdit(album)}>Edit</button>
-      <button onClick={() => onDelete(album.id)}>Delete</button>
-    </div>
+    <ListGroup.Item className="d-flex justify-content-between align-items-center">
+      <div>{album.title}</div>
+      <div>
+        <Button variant="primary" size="sm" onClick={() => onEdit(album)} className="mr-2">
+          Edit
+        </Button>
+        <Button variant="danger" size="sm" onClick={() => onDelete(album.id)}>
+          Delete
+        </Button>
+      </div>
+    </ListGroup.Item>
   );
 };
 
